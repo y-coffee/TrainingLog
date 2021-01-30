@@ -29,6 +29,8 @@ const styles = StyleSheet.create({
     borderRadius: 4,
     alignSelf: 'flex-start',
     marginBottom: 24,
+    borderBottomWidth: 3,
+    borderBottomColor: '#C38D18',
   },
   buttonLabel: {
     fontSize: 16,

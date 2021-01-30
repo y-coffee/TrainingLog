@@ -1,14 +1,14 @@
 {
   "expo": {
-    "name": "TrainingLog",
+    "name": "今日のトレメニュー",
     "slug": "TrainingLog",
     "version": "1.0.0",
     "privacy": "unlisted",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/Icon.png",
     "splash": {
-      "image": "./assets/splash.png",
-      "resizeMode": "contain",
+      "image": "./assets/Splash.png",
+      "resizeMode": "cover",
       "backgroundColor": "#ffffff"
     },
     "updates": {
@@ -18,12 +18,15 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": false
     },
     "android": {
+      "package": "jp.AppCreate.TrainingLog",
+      "versionCode": 1,
+      "permissions": [],
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF"
+        "foregroundImage": "./assets/Icon_adaprive_foreground.png",
+        "backgroundImage": "./assets/Icon_adaptive_backgroung.png"
       }
     },
     "web": {

@@ -9,6 +9,7 @@ import MemoEditScreen from './src/screens/MemoEditScreen';
 import MemoCreateScreen from './src/screens/MemoCreateScreen';
 import LogInScreen from './src/screens/LogInScreen';
 import SignUpScreen from './src/screens/SignUpScreen';
+import PolicyScreen from './src/screens/PolicyScreen';
 
 import { firebaseConfig } from './env';
 
@@ -27,8 +28,12 @@ export default function App() {
       <Stack.Navigator
         initialRouteName="SignUp"
         screenOptions={{
-          headerStyle: { backgroundColor: '#F0AC19' },
-          headerTitleStyle: { color: '#ffffff', fontWeight: 'bold' },
+          headerStyle: {
+            backgroundColor: '#F0AC19', borderBottomWidth: 3, borderBottomColor: '#C38D18', height: 100,
+          },
+          headerTitleStyle: {
+            color: '#ffffff', fontWeight: 'bold', fontSize: 25,
+          },
           headerTitle: '今日のトレメニュー',
           headerTintColor: '#ffffff',
           headerBackTitle: 'Back',
@@ -55,6 +60,7 @@ export default function App() {
             cardStyleInterpolator: CardStyleInterpolators.forFadeFromBottomAndroid,
           }}
         />
+        <Stack.Screen name="Policy" component={PolicyScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

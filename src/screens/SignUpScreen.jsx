@@ -40,7 +40,7 @@ export default function SignUpScreen(props) {
     <View style={styles.container}>
       <Loading isLoading={isLoading} />
       <KeyboardAvoidingView style={styles.inner}>
-        <Text style={styles.title}>利用登録</Text>
+        <Text style={styles.title}>サインアップ</Text>
         <TextInput
           style={styles.input}
           value={email}
@@ -60,7 +60,7 @@ export default function SignUpScreen(props) {
           textContentType="password"
         />
         <Button
-          label="Submit"
+          label="利用規約に同意して登録"
           onPress={handlePress}
         />
         <View style={styles.footer}>
@@ -76,6 +76,9 @@ export default function SignUpScreen(props) {
             <Text style={styles.footerLink}>≫ログイン</Text>
           </TouchableOpacity>
         </View>
+        <TouchableOpacity style={styles.policyBox} onPress={() => { navigation.navigate('Policy'); }}>
+          <Text style={styles.policy}>利用規約・プライバシーポリシー</Text>
+        </TouchableOpacity>
       </KeyboardAvoidingView>
     </View>
   );
@@ -97,6 +100,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     marginBottom: 24,
     color: '#ffffff',
+    paddingTop: 30,
   },
   input: {
     fontSize: 16,
@@ -109,6 +113,7 @@ const styles = StyleSheet.create({
   },
   footer: {
     flexDirection: 'row',
+    paddingLeft: 5,
   },
   footerText: {
     fontSize: 16,
@@ -121,5 +126,12 @@ const styles = StyleSheet.create({
     lineHeight: 24,
     color: '#F0AC19',
     fontWeight: 'bold',
+  },
+  policyBox: {
+    marginTop: 20,
+    paddingLeft: 5,
+  },
+  policy: {
+    fontSize: 16,
   },
 });

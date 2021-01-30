@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import {
   View, Text, TextInput, StyleSheet, TouchableOpacity, Alert,
 } from 'react-native';
+// import PropTypes from 'prop-types';
 import firebase from 'firebase';
 
 import Button from '../components/Button';
@@ -70,11 +71,11 @@ export default function LogInScreen(props) {
           textContentType="password"
         />
         <Button
-          label="Submit"
+          label="トレーニングスタート"
           onPress={handlePress}
         />
         <View style={styles.footer}>
-          <Text style={styles.footerText}>まだ登録していませんか？</Text>
+          <Text style={styles.footerText}>登録していませんか？</Text>
           <TouchableOpacity
             onPress={
               () => {
@@ -86,8 +87,12 @@ export default function LogInScreen(props) {
             }
           >
             <Text style={styles.footerLink}>≫利用登録</Text>
+            {/* <Text>問い合わせ先</Text> */}
           </TouchableOpacity>
         </View>
+        <TouchableOpacity style={styles.policyBox} onPress={() => { navigation.navigate('Policy'); }}>
+          <Text style={styles.policy}>利用規約・プライバシーポリシー</Text>
+        </TouchableOpacity>
       </View>
     </View>
   );
@@ -109,6 +114,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     marginBottom: 24,
     color: '#ffffff',
+    paddingTop: 30,
   },
   input: {
     fontSize: 16,
@@ -121,6 +127,7 @@ const styles = StyleSheet.create({
   },
   footer: {
     flexDirection: 'row',
+    paddingLeft: 5,
   },
   footerText: {
     fontSize: 16,
@@ -133,5 +140,12 @@ const styles = StyleSheet.create({
     lineHeight: 24,
     color: '#F0AC19',
     fontWeight: 'bold',
+  },
+  policyBox: {
+    marginTop: 20,
+    paddingLeft: 5,
+  },
+  policy: {
+    fontSize: 16,
   },
 });
