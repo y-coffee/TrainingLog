@@ -26,7 +26,7 @@ export default function Policy() {
               <Text style={styles.articleURL2} onPress={() => Linking.openURL('https://policies.google.com/privacy?hl=ja%EF%BB%BF')}>・Firebase Analytics(Google Inc.)</Text>
               <Text style={styles.articleURL2} onPress={() => Linking.openURL('https://policies.google.com/privacy?hl=ja%EF%BB%BF')}>・Google Analytics(Google Inc.)</Text>
               <Text style={styles.subsectionTitle}>2.2 アプリケーションに登録された連絡先やトレーニングメニューの内容</Text>
-              <Text style={styles.article}>本アプリは利用者が設定するパスワードを用いたサインアップとログイン機能を持っています。これはアプリを利用するにあたって必要な情報です。また、データベースを含むアプリ内に保存された情報は利用者に紐付けられます。ただし、アプリ内で削除した場合にはデータベースにもその内容は残りません。</Text>
+              <Text style={styles.article}>本アプリは利用者が設定するパスワードを用いたサインアップとログイン機能を持っています。これはアプリを利用するにあたって必要な情報です。また、アプリ内に保存された情報(データベース含む)は利用者に紐付けられます。ただし、アプリ内で削除した場合にはデータベースにもその内容は残りません。</Text>
               <Text style={styles.subsectionTitle}>2.3 お問い合わせやご意見を頂く際の個人情報の収集</Text>
               <Text style={styles.subsectionTitle2}>2.3.1 送信元のメールアドレス、端末を識別する情報。</Text>
               <Text style={styles.subsectionTitle2}>2.3.2 お問い合わせ内容。</Text>
