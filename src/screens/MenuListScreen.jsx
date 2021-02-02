@@ -4,15 +4,15 @@ import {
 } from 'react-native';
 import firebase from 'firebase';
 
-import MemoList from '../components/MemoList';
+import MenuList from '../components/MenuList';
 import CircleButton from '../components/CircleButton';
 import LogOutButton from '../components/LogOutButton';
 import Button from '../components/Button';
 import Loading from '../components/Loading';
 
-export default function MemoListScreen(props) {
+export default function MenuListScreen(props) {
   const { navigation } = props;
-  const [memos, setMemos] = useState([]);
+  const [menus, setMenus] = useState([]);
   const [isLoading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -27,18 +27,18 @@ export default function MemoListScreen(props) {
     let unsubscribe = () => {};
     if (currentUser) {
       setLoading(true);
-      const ref = db.collection(`users/${currentUser.uid}/memos`).orderBy('updatedAt', 'desc');
+      const ref = db.collection(`users/${currentUser.uid}/menus`).orderBy('updatedAt', 'desc');
       unsubscribe = ref.onSnapshot((snapshot) => {
-        const userMemos = [];
+        const userMenus = [];
         snapshot.forEach((doc) => {
           const data = doc.data();
-          userMemos.push({
+          userMenus.push({
             id: doc.id,
             bodyText: data.bodyText,
             updatedAt: data.updatedAt.toDate(),
           });
         });
-        setMemos(userMemos);
+        setMenus(userMenus);
         setLoading(false);
       }, () => {
         setLoading(false);
@@ -48,16 +48,16 @@ export default function MemoListScreen(props) {
     return unsubscribe;
   }, []);
 
-  if (memos.length === 0) {
+  if (menus.length === 0) {
     return (
       <View style={emptyStyles.container}>
         <Loading isLoading={isLoading} />
         <View style={emptyStyles.inner}>
-          <Text style={emptyStyles.title}>トレメニューを作成しよう！</Text>
+          <Text style={emptyStyles.title}>早速トレーニングメニューを</Text>
           <Button
             style={emptyStyles.button}
             label="作成する"
-            onPress={() => { navigation.navigate('MemoCreate'); }}
+            onPress={() => { navigation.navigate('MenuCreate'); }}
           />
         </View>
       </View>
@@ -66,10 +66,10 @@ export default function MemoListScreen(props) {
 
   return (
     <View style={styles.container}>
-      <MemoList memos={memos} />
+      <MenuList menus={menus} />
       <CircleButton
         name="plus"
-        onPress={() => { navigation.navigate('MemoCreate'); }}
+        onPress={() => { navigation.navigate('MenuCreate'); }}
       />
     </View>
   );
@@ -78,12 +78,12 @@ export default function MemoListScreen(props) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // backgroundColor: '#C0C0C0',
     backgroundColor: '#808080',
   },
 });
 
 const emptyStyles = StyleSheet.create({
+
   container: {
     flex: 1,
     justifyContent: 'center',
@@ -103,4 +103,5 @@ const emptyStyles = StyleSheet.create({
   button: {
     alignSelf: 'center',
   },
+
 });

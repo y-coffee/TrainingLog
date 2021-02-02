@@ -8,7 +8,7 @@ import firebase from 'firebase';
 import CircleButton from '../components/CircleButton';
 import { translateErrors } from '../utils';
 
-export default function MemoEditScreen(props) {
+export default function MenuEditScreen(props) {
   const { navigation, route } = props;
   const { id, bodyText } = route.params;
   const [body, setBody] = useState(bodyText);
@@ -17,7 +17,7 @@ export default function MemoEditScreen(props) {
     const { currentUser } = firebase.auth();
     if (currentUser) {
       const db = firebase.firestore();
-      const ref = db.collection(`users/${currentUser.uid}/memos`).doc(id);
+      const ref = db.collection(`users/${currentUser.uid}/menus`).doc(id);
       ref.set({
         bodyText: body,
         updatedAt: new Date(),
@@ -52,7 +52,7 @@ export default function MemoEditScreen(props) {
   );
 }
 
-MemoEditScreen.propTypes = {
+MenuEditScreen.propTypes = {
   route: shape({
     params: shape({ id: string, bodyText: string }),
   }).isRequired,

@@ -7,14 +7,14 @@ import firebase from 'firebase';
 import CircleButton from '../components/CircleButton';
 import { translateErrors } from '../utils';
 
-export default function MemoCreateScreen(props) {
+export default function MenuCreateScreen(props) {
   const { navigation } = props;
   const [bodyText, setBodyText] = useState('');
 
   function handlePress() {
     const { currentUser } = firebase.auth();
     const db = firebase.firestore();
-    const ref = db.collection(`users/${currentUser.uid}/memos`);
+    const ref = db.collection(`users/${currentUser.uid}/menus`);
     ref.add({
       bodyText,
       updatedAt: new Date(),

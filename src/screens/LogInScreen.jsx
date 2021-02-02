@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import {
   View, Text, TextInput, StyleSheet, TouchableOpacity, Alert,
 } from 'react-native';
-// import PropTypes from 'prop-types';
 import firebase from 'firebase';
 
 import Button from '../components/Button';
@@ -20,7 +19,7 @@ export default function LogInScreen(props) {
       if (user) {
         navigation.reset({
           index: 0,
-          routes: [{ name: 'MemoList' }],
+          routes: [{ name: 'MenuList' }],
         });
       } else {
         setLoading(false);
@@ -35,7 +34,7 @@ export default function LogInScreen(props) {
       .then(() => {
         navigation.reset({
           index: 0,
-          routes: [{ name: 'MemoList' }],
+          routes: [{ name: 'MenuList' }],
         });
       })
       .catch((error) => {
@@ -99,9 +98,9 @@ export default function LogInScreen(props) {
 }
 
 const styles = StyleSheet.create({
+
   container: {
     flex: 1,
-    // backgroundColor: '#f0f4f8',
     backgroundColor: '#808080',
   },
   inner: {
@@ -148,4 +147,5 @@ const styles = StyleSheet.create({
   policy: {
     fontSize: 16,
   },
+
 });

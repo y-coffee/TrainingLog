@@ -9,20 +9,20 @@ import firebase from 'firebase';
 import CircleButton from '../components/CircleButton';
 import { dateToString } from '../utils';
 
-export default function MemoDetailScreen(props) {
+export default function MenuDetailScreen(props) {
   const { navigation, route } = props;
   const { id } = route.params;
-  const [memo, setMemo] = useState(null);
+  const [menu, setMenu] = useState(null);
 
   useEffect(() => {
     const { currentUser } = firebase.auth();
     let unsubscribe = () => {};
     if (currentUser) {
       const db = firebase.firestore();
-      const ref = db.collection(`users/${currentUser.uid}/memos`).doc(id);
+      const ref = db.collection(`users/${currentUser.uid}/menus`).doc(id);
       unsubscribe = ref.onSnapshot((doc) => {
         const data = doc.data();
-        setMemo({
+        setMenu({
           id: doc.id,
           bodyText: data.bodyText,
           updatedAt: data.updatedAt.toDate(),
@@ -33,14 +33,14 @@ export default function MemoDetailScreen(props) {
 
   return (
     <View style={styles.container}>
-      <View style={styles.memoHeader}>
-        <Text style={styles.memoTitle} numberOfLines={1}>{memo && memo.bodyText}</Text>
-        <Text style={styles.memoDate}>{memo && dateToString(memo.updatedAt)}</Text>
+      <View style={styles.menuHeader}>
+        <Text style={styles.menuTitle} numberOfLines={1}>{menu && menu.bodyText}</Text>
+        <Text style={styles.menuDate}>{menu && dateToString(menu.updatedAt)}</Text>
       </View>
-      <ScrollView style={styles.memoBody}>
-        <View style={styles.memoBodyInner}>
-          <Text style={styles.memoText}>
-            {memo && memo.bodyText}
+      <ScrollView style={styles.menuBody}>
+        <View style={styles.menuBodyInner}>
+          <Text style={styles.menuText}>
+            {menu && menu.bodyText}
           </Text>
         </View>
       </ScrollView>
@@ -50,13 +50,13 @@ export default function MemoDetailScreen(props) {
       <CircleButton
         style={{ top: 60, buttom: 'auto' }}
         name="edit"
-        onPress={() => { navigation.navigate('MemoEdit', { id: memo.id, bodyText: memo.bodyText }); }}
+        onPress={() => { navigation.navigate('MenuEdit', { id: menu.id, bodyText: menu.bodyText }); }}
       />
     </View>
   );
 }
 
-MemoDetailScreen.propTypes = {
+MenuDetailScreen.propTypes = {
   route: shape({
     params: shape({ id: string }),
   }).isRequired,
@@ -67,33 +67,33 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#ffffff',
   },
-  memoHeader: {
+  menuHeader: {
     backgroundColor: '#F0AC19',
     height: 96,
     justifyContent: 'center',
     paddingVertical: 24,
     paddingHorizontal: 19,
   },
-  memoTitle: {
+  menuTitle: {
     color: '#ffffff',
     fontSize: 20,
     lineHeight: 32,
     fontWeight: 'bold',
   },
-  memoDate: {
+  menuDate: {
     color: '#ffffff',
     fontSize: 12,
     lineHeight: 16,
   },
-  memoBody: {
+  menuBody: {
     height: 150,
   },
-  memoBodyInner: {
+  menuBodyInner: {
     paddingTop: 32,
     paddingBottom: 32,
     paddingHorizontal: 27,
   },
-  memoText: {
+  menuText: {
     fontSize: 16,
     lineHeight: 24,
   },

@@ -24,7 +24,7 @@ export default function SignUpScreen(props) {
       .then(() => {
         navigation.reset({
           index: 0,
-          routes: [{ name: 'MemoList' }],
+          routes: [{ name: 'MenuList' }],
         });
       })
       .catch((error) => {
