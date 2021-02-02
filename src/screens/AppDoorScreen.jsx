@@ -69,12 +69,13 @@ const styles = StyleSheet.create({
     color: '#ffffff',
     fontSize: 30,
     fontWeight: 'bold',
-    paddingBottom: 20,
+    paddingBottom: 10,
+    borderBottomWidth: 3,
+    borderBottomColor: '#ffffff',
   },
   greetingBox: {
     flex: 1,
     justifyContent: 'center',
-    // alignItems: 'center',
     marginBottom: 180,
   },
   greeting: {

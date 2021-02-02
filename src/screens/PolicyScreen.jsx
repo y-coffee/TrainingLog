@@ -73,7 +73,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#ffffff',
-    // backgroundColor: '#808080',
   },
   policyTitle: {
     fontSize: 20,
@@ -105,33 +104,28 @@ const styles = StyleSheet.create({
   },
   article: {
     fontSize: 15,
-    // fontWeight: 'bold',
   },
   articleURL: {
     fontSize: 15,
     color: 'blue',
     marginTop: 15,
     marginBottom: 5,
-    // fontWeight: 'bold',
   },
   articleURL2: {
     fontSize: 15,
     color: 'blue',
     marginTop: 8,
     marginBottom: 5,
-    // fontWeight: 'bold',
   },
   article2: {
     fontSize: 15,
     marginTop: 15,
     marginBottom: 5,
-    // fontWeight: 'bold',
   },
   article3: {
     fontSize: 15,
     marginTop: 8,
     marginBottom: 5,
-    // fontWeight: 'bold',
   },
   subsectionTitle: {
     fontSize: 17,

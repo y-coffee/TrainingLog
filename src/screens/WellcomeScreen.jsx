@@ -37,7 +37,7 @@ export default function WellcomScreen(props) {
         </View>
         <View style={styles.stepDescriptionBox}>
           <Text style={styles.stepDescription}>初回利用時にメールアドレスとパスワードを用いて利用登録をします。</Text>
-          <Text style={styles.stepDescription}>これらがユーザー情報となり、あなたのトレーニングメニューは他のユーザーからは見ることも編集することもできないものになります。</Text>
+          <Text style={styles.stepDescription}>これらがユーザー情報となることで、あなたのトレーニングメニューは他のユーザーからは見ることも編集することもできないものになります。</Text>
         </View>
       </View>
 
