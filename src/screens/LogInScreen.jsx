@@ -86,7 +86,6 @@ export default function LogInScreen(props) {
             }
           >
             <Text style={styles.footerLink}>≫利用登録</Text>
-            {/* <Text>問い合わせ先</Text> */}
           </TouchableOpacity>
         </View>
         <TouchableOpacity style={styles.policyBox} onPress={() => { navigation.navigate('Policy'); }}>
