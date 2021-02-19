@@ -2,7 +2,7 @@
   "expo": {
     "name": "今日のトレメニュー",
     "slug": "TrainingLog",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "privacy": "unlisted",
     "orientation": "portrait",
     "icon": "./assets/Icon.png",

@@ -45,7 +45,7 @@ export default function MenuDetailScreen(props) {
         </View>
       </ScrollView>
       <View style={styles.bgmBox}>
-        <WebView source={{ uri: 'https://www.youtube.com/embed/-ObdvMkCKws' }} />
+        <WebView source={{ uri: 'https://www.youtube.com/embed/-AwrTuOxTF8' }} />
       </View>
       <CircleButton
         style={{ top: 60, buttom: 'auto' }}
