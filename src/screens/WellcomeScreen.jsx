@@ -62,7 +62,7 @@ export default function WellcomScreen(props) {
           <Image source={ReadImage} style={styles.image} />
         </View>
         <View style={styles.stepDescriptionBox}>
-          <Text style={styles.stepDescription}>BGM(No Copyright Sounds)を聴くことのできるメニュー詳細画面が個別に用意されています。</Text>
+          <Text style={styles.stepDescription}>BGMを聴くことのできるメニュー詳細画面が個別に用意されています。</Text>
           <Text style={styles.stepDescription}>メニューの一覧画面内にリストアップされたものの中から希望のメニューをタップすると、詳細画面に移動することができます。メニューの確認にはこの詳細画面を用います。</Text>
         </View>
       </View>
