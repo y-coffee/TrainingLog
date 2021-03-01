@@ -32,10 +32,10 @@ export default function App() {
         initialRouteName="AppDoor"
         screenOptions={{
           headerStyle: {
-            backgroundColor: '#F0AC19', borderBottomWidth: 3, borderBottomColor: '#C38D18', height: 100,
+            backgroundColor: '#F0AC19', borderBottomWidth: 3, borderBottomColor: '#C38D18', height: 70,
           },
           headerTitleStyle: {
-            color: '#ffffff', fontWeight: 'bold', fontSize: 25,
+            color: '#ffffff', fontWeight: 'bold', fontSize: 23,
           },
           headerTitle: '今日のトレメニュー',
           headerTintColor: '#ffffff',

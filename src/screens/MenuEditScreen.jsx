@@ -7,6 +7,7 @@ import firebase from 'firebase';
 
 import CircleButton from '../components/CircleButton';
 import { translateErrors } from '../utils';
+import Calculator from '../components/Calculator';
 
 export default function MenuEditScreen(props) {
   const { navigation, route } = props;
@@ -34,6 +35,9 @@ export default function MenuEditScreen(props) {
 
   return (
     <KeyboardAvoidingView style={styles.container} behavior="absolute">
+      <View style={styles.bgmBox}>
+        <Calculator />
+      </View>
       <View style={styles.inputContainer}>
         <ScrollView>
           <TextInput
@@ -47,6 +51,7 @@ export default function MenuEditScreen(props) {
       <CircleButton
         name="check"
         onPress={handlePress}
+        style={{ bottom: 30 }}
       />
     </KeyboardAvoidingView>
   );
@@ -61,9 +66,12 @@ MenuEditScreen.propTypes = {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    // flexDirection: 'column',
+
   },
   inputContainer: {
-    flex: 1,
+    flex: 1.9,
+    // backgroundColor: 'red',
   },
   input: {
     flex: 1,
@@ -73,5 +81,13 @@ const styles = StyleSheet.create({
     paddingTop: 32,
     paddingBottom: 32,
     paddingHorizontal: 27,
+  },
+  bgmBox: {
+    flex: 1.1,
+    position: 'relative',
+    marginTop: 0,
+    // backgroundColor: 'blue',
+    backgroundColor: '#202020',
+    // paddingBottom: 20,
   },
 });

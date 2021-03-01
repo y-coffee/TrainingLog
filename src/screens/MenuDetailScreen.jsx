@@ -3,7 +3,6 @@ import { shape, string } from 'prop-types';
 import {
   View, Text, ScrollView, StyleSheet,
 } from 'react-native';
-import { WebView } from 'react-native-webview';
 import firebase from 'firebase';
 
 import CircleButton from '../components/CircleButton';
@@ -44,9 +43,6 @@ export default function MenuDetailScreen(props) {
           </Text>
         </View>
       </ScrollView>
-      <View style={styles.bgmBox}>
-        <WebView source={{ uri: 'https://www.youtube.com/embed/-AwrTuOxTF8' }} />
-      </View>
       <CircleButton
         style={{ top: 60, buttom: 'auto' }}
         name="edit"
@@ -69,7 +65,8 @@ const styles = StyleSheet.create({
   },
   menuHeader: {
     backgroundColor: '#F0AC19',
-    height: 96,
+    height: 90,
+    // height: 70,
     justifyContent: 'center',
     paddingVertical: 24,
     paddingHorizontal: 19,
@@ -77,12 +74,13 @@ const styles = StyleSheet.create({
   menuTitle: {
     color: '#ffffff',
     fontSize: 20,
+    // fontSize: 15,
     lineHeight: 32,
     fontWeight: 'bold',
   },
   menuDate: {
     color: '#ffffff',
-    fontSize: 12,
+    fontSize: 13,
     lineHeight: 16,
   },
   menuBody: {

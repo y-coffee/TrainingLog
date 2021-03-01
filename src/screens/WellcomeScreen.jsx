@@ -56,39 +56,39 @@ export default function WellcomScreen(props) {
 
       <View style={styles.container}>
         <View style={styles.stepTitleBox}>
-          <Text style={styles.stepTitle}>STEP3 メニューの詳細とBGM</Text>
+          <Text style={styles.stepTitle}>STEP3 メニューの詳細</Text>
         </View>
         <View style={styles.imageBox}>
           <Image source={ReadImage} style={styles.image} />
         </View>
         <View style={styles.stepDescriptionBox}>
-          <Text style={styles.stepDescription}>BGMを聴くことのできるメニュー詳細画面が個別に用意されています。</Text>
-          <Text style={styles.stepDescription}>メニューの一覧画面内にリストアップされたものの中から希望のメニューをタップすると、詳細画面に移動することができます。メニューの確認にはこの詳細画面を用います。</Text>
+          <Text style={styles.stepDescription}>メニュー詳細画面は個別に用意されています。</Text>
+          <Text style={styles.stepDescription}>一覧画面内にリストアップされたメニューの中から希望のメニューをタップすると、詳細画面に移動することができます。メニューの確認にはこの詳細画面を用います。</Text>
         </View>
       </View>
 
       <View style={styles.container}>
         <View style={styles.stepTitleBox}>
-          <Text style={styles.stepTitle}>STEP4 メニューの編集とBGM</Text>
+          <Text style={styles.stepTitle}>STEP4 メニューの編集と計算</Text>
         </View>
         <View style={styles.imageBox}>
           <Image source={EditImage} style={styles.image} />
         </View>
         <View style={styles.stepDescriptionBox}>
           <Text style={styles.stepDescription}>トレーニングメニューの閲覧と編集にペンやノートなどの筆記用具は一切必要ありません。</Text>
-          <Text style={styles.stepDescription}>また、詳細画面に用意されているBGMを聴きながら編集画面に移ることができるので、トレーニング中のモチベーションコントロールも容易です。</Text>
+          <Text style={styles.stepDescription}>また、メニュー編集画面には電卓が用意されており、重量などの調節が簡単に行えるようになっています。</Text>
         </View>
       </View>
 
       <View style={styles.container}>
         <View style={styles.stepTitleBox}>
-          <Text style={styles.stepTitle}>STEP5 シンプルなメニュー管理</Text>
+          <Text style={styles.stepTitle}>STEP5 シンプルな管理</Text>
         </View>
         <View style={styles.imageBox}>
           <Image source={EasyUseImage} style={styles.image} />
         </View>
         <View style={styles.stepDescriptionBox}>
-          <Text style={styles.stepDescription}>作成した全てのトレーニングメニューはリストアップされており、一覧性があります。一覧画面から既に作成されたメニューを削除することができます。</Text>
+          <Text style={styles.stepDescription}>作成した全てのトレーニングメニューはリストアップされており、一覧性があります。メニューの削除・作成・閲覧・編集が一覧画面からワンタッチで行うことができます。</Text>
         </View>
         <Button
           label="アプリを使う"
@@ -119,12 +119,12 @@ const styles = StyleSheet.create({
   },
   imageBox: {
     flex: 1,
-    width: 300,
-    height: 300,
+    width: 250,
+    height: 250,
   },
   image: {
-    width: 300,
-    height: 300,
+    width: 250,
+    height: 250,
   },
   stepTitleBox: {
     marginTop: 100,
@@ -150,7 +150,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#4B4B4B',
     alignSelf: 'center',
     position: 'absolute',
-    bottom: 100,
+    bottom: 70,
     zIndex: 10,
   },
   buttonBox: {

@@ -15,9 +15,9 @@ export default function AppDoorScreen(props) {
         <Image source={IconImage} style={styles.image} />
         <Text style={styles.appName}>今日のトレメニュー</Text>
       </View>
-      <View style={styles.greetingBox}>
+      {/* <View style={styles.greetingBox}>
         <Text style={styles.greeting}>ウォームアップはしましたか？</Text>
-      </View>
+      </View> */}
       <Button
         label="チュートリアル"
         style={styles.button0}

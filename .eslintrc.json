@@ -22,5 +22,6 @@
         "linebreak-style": 0,
         "react/prop-types": ["error", { "ignore": ["navigation"] }],
         "import/prefer-default-export": 0
+        // "react/no-this-in-sfc": 0
     }
 }
