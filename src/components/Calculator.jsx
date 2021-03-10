@@ -10,15 +10,60 @@ export default function Calculator() {
   const [operator, setOperator] = useState(null);
   const [prevVal, setPrevVal] = useState(null);
   const [resultVal, setResultVal] = useState(false);
+  const [dotMode, setDotMode] = useState(true);
+
+  const [equalMode, setEqualMode] = useState(false);
 
   const handleTap = (type, value) => {
-    if (currVal === 0 && type === 'number') {
+    const current = parseFloat(currVal);
+    const previous = parseFloat(prevVal);
+
+    if (currVal === 0 && dotMode && (type === 'number')) {
+      if (type === 'dot') {
+        setCurrVal(`${currVal}${value}`);
+        setDotMode(false);
+      }
+      if (equalMode) {
+        setEqualMode(false);
+        // return;
+      }
       setCurrVal(value);
-    } else if (resultVal === true && type === ('number' || 'operator' || 'equal')) {
+    } else if (currVal === 0 && dotMode && (type === 'dot')) {
+      if (type === 'number') {
+        setCurrVal(`${currVal}${value}`);
+        setDotMode(false);
+      }
+      setCurrVal(value);
+      if (type === 'dot') {
+        setCurrVal(`${currVal}${value}`);
+        setDotMode(false);
+      }
+    } else if (currVal === 0 && dotMode && (type === 'equal')) {
+      setEqualMode(true);
       setCurrVal(0);
-      setResultVal(false);
+    } else if (currVal && dotMode && (type === 'number')) {
+      if (type === 'dot') {
+        setCurrVal(`${currVal}${value}`);
+        setDotMode(false);
+      }
       setCurrVal(value);
-    } else if (currVal && !resultVal && type === 'number') {
+      if (type === 'number') {
+        setCurrVal(`${currVal}${value}`);
+        setDotMode(false);
+      }
+    } else if (currVal && dotMode && (type === 'dot')) {
+      setCurrVal(`${currVal}${value}`);
+    } else if (!resultVal && dotMode && (type === 'number' || 'dot')) {
+      setResultVal(false);
+      // setCurrVal(value);
+      setCurrVal(`${currVal}${value}`);
+      setDotMode(false);
+    } else if (resultVal && currVal) {
+      setResultVal(false);
+      // setCurrVal(0);
+    } else if (currVal && !resultVal && !dotMode && (type === 'number')) {
+      setCurrVal(`${currVal}${value}`);
+    } else if (currVal && !resultVal && dotMode && (type === 'number')) {
       setCurrVal(`${currVal}${value}`);
     }
 
@@ -26,6 +71,7 @@ export default function Calculator() {
       setOperator(value);
       setPrevVal(currVal);
       setCurrVal(0);
+      setDotMode(true);
     }
 
     if (type === 'clear') {
@@ -33,6 +79,7 @@ export default function Calculator() {
       setOperator(null);
       setPrevVal(null);
       setResultVal(false);
+      setDotMode(true);
     }
 
     if (type === 'posneg') {
@@ -41,26 +88,30 @@ export default function Calculator() {
     }
 
     if (type === 'percentage') {
-      setCurrVal(`${parseFloat(currVal) * 0.01}`);
+      // setCurrVal(`${parseFloat(currVal) * 0.01}`);
+      setCurrVal(`${Math.floor(((currVal) * 0.01) * 10 ** 4) / 10 ** 4}`);
       setResultVal(true);
+      setDotMode(false);
     }
 
     if (type === 'equal') {
-      const current = parseFloat(currVal);
-      const previous = parseFloat(prevVal);
-
+      setCurrVal(currVal);
       if (operator === '+') {
         setCurrVal(previous + current);
         setOperator(null);
         setPrevVal(null);
         setResultVal(true);
+        setDotMode(true);
+        setEqualMode(true);
       }
 
       if (operator === '/') {
-        setCurrVal(previous / current);
+        setCurrVal(`${Math.floor((previous / current) * (10 ** 4)) / 10 ** 4}`);
         setOperator(null);
         setPrevVal(null);
         setResultVal(true);
+        setDotMode(true);
+        setEqualMode(true);
       }
 
       if (operator === '-') {
@@ -68,13 +119,17 @@ export default function Calculator() {
         setOperator(null);
         setPrevVal(null);
         setResultVal(true);
+        setDotMode(true);
+        setEqualMode(true);
       }
 
       if (operator === '*') {
-        setCurrVal(previous * current);
+        setCurrVal(`${Math.floor((previous * current) * (10 ** 4)) / 10 ** 4}`);
         setOperator(null);
         setPrevVal(null);
         setResultVal(true);
+        setDotMode(true);
+        setEqualMode(true);
       }
     }
   };
@@ -82,7 +137,7 @@ export default function Calculator() {
   return (
     <View style={styles.container}>
       <StatusBar barStyle="light-content" />
-      <Text style={styles.value}>{currVal}</Text>
+      <Text style={styles.value} maxlength="10">{currVal}</Text>
       <Row>
         <CalButton text="C" theme="secondary" onPress={() => handleTap('clear')} />
         <CalButton text="+/-" theme="secondary" onPress={() => handleTap('posneg')} />
@@ -109,7 +164,7 @@ export default function Calculator() {
       </Row>
       <Row>
         <CalButton text="0" size="double" onPress={() => handleTap('number', 0)} />
-        <CalButton text="." onPress={() => handleTap('number', '.')} />
+        <CalButton text="." onPress={() => handleTap('dot', '.')} />
         <CalButton text="=" theme="accent" onPress={() => handleTap('equal')} />
       </Row>
     </View>
