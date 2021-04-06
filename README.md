@@ -12,6 +12,8 @@ Androidに対応したログイン認証付きCRUDネイティブアプリです
 
 自身の趣味の1つにトレーニングがあり、その際に感じていた不便を解決する目的から「少ない荷物でジムに向かい筋トレができる」というコンセプトのもとReact Nativeで制作しました。ユーザは他のユーザーのデータを編集することも削除することもできません。
 
+※数回のバージョンアップ
+
 ## テストユーザー情報
 
 - テストユーザーメールアドレス: tlog-tester@example.com
@@ -29,6 +31,8 @@ Google Playのアプリページはこちらから: [リンク](https://play.goo
 ===
 
 - React Native 4.13.1
+
+- react-native-swiper 1.6.0
 
 - React.js 16.13.1
 
@@ -48,10 +52,12 @@ Google Playのアプリページはこちらから: [リンク](https://play.goo
 
 - ESLint 7.18.0(Airbnb)
 
-- Figma(デザインカンプ)
+- Figma(デザインカンプ/画像の編集加工)
 
 機能一覧
 ===
+
+- チュートリアル機能(react-native-swiperを利用/ファーストビューから閲覧可能)
 
 - ユーザー登録/ログイン認証機能(FirebaseのAuthenticationを利用)
 
