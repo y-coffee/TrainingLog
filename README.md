@@ -36,6 +36,8 @@ Google Playのアプリページはこちらから: [リンク](https://play.goo
 
 - React.js 16.13.1
 
+  - useState/useEffect 
+
 - React Navigation 5.9.2
 
 - Prop Types 15.7.2
@@ -49,6 +51,8 @@ Google Playのアプリページはこちらから: [リンク](https://play.goo
 - Android Studio 4.1.2
 
 - Firebase 8.2.4
+
+  - Authentication/Firestore
 
 - ESLint 7.18.0(Airbnb)
 
