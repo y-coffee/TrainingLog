@@ -14,9 +14,9 @@ Androidに対応したログイン認証付きCRUDネイティブアプリです
 
 ## テストユーザー情報
 
-テストユーザーメールアドレス: tlog-tester@example.com
+- テストユーザーメールアドレス: tlog-tester@example.com
 
-テストユーザーパスワード: tester8888
+- テストユーザーパスワード: tester8888
 
 アプリURL
 ===
