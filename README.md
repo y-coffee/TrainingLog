@@ -1,27 +1,58 @@
-Name
+アプリ名
 ====
 
 今日のトレメニュー
 
-## Description
+概要
+===
 
 ![app-firstview](https://user-images.githubusercontent.com/68333078/111040671-7abb4500-8477-11eb-9699-f65c6b858037.png)
 
-Android対応のCRUDネイティブアプリです。React Nativeで制作しました。
+Androidに対応したログイン認証付きCRUDネイティブアプリです。
 
-自身の趣味の1つにトレーニングがあり、その際に感じていた不便を解決する目的からコンセプトを考えました。コンセプトは「少ない荷物でジムに向かい筋トレができる」です。
+自身の趣味の1つにトレーニングがあり、その際に感じていた不便を解決する目的から「少ない荷物でジムに向かい筋トレができる」というコンセプトのもとReact Nativeで制作しました。ユーザは他のユーザーのデータを編集することも削除することもできません。
 
-このアプリでは、トレーニングメニューを作成・編集・閲覧・削除することができるためノートや筆記用具を持参する必要がなくなります。加えて、トレーニング中にバーベルやダンベルの挙上重量の計算が必要になった場合に便利は電卓機能がメニュー編集画面に実装されています。
+## テストユーザー情報
 
-ユーザー認証機能やデータの保存を行うためのバックエンドはFirebaseで、それぞれAuthenticationとFirestoreを利用しています。ユーザは他のユーザーのデータを編集することも削除することもできません。
+テストユーザーメールアドレス: tlog-tester@example.com
 
-状態管理にはReact HooksのuseStateとuseEffectを活用しています。
+テストユーザーパスワード: tester8888
 
-制作中のクライアントサイドでのチェックにはExpo、PC上でのエミュレーターを使ったチェックにはAndroid Studioを役立てました。デザインカンプはFigmaで行っています。
+アプリURL
+===
 
-テストユーザー: tlog-tester@example.com
-テストパスワード: tester8888
+Google Playのアプリページはこちらから: [リンク](https://play.google.com/store/apps/details?id=jp.AppCreate.TrainingLog)
 
-■ 使用言語・ツール：React Native/Expo/Android Studio/Firebase/Figma
+※ログインページでは、上記のテストユーザー情報を入力して下さい。
 
-■ アプリが掲載されているGoogle Playはこちらからどうぞ：[リンク(外部)](https://play.google.com/store/apps/details?id=jp.AppCreate.TrainingLog)
+使用技術一覧(言語・ライブラリ・ツール)
+===
+
+・React Native 4.13.1
+
+・React.js 16.13.1
+
+・React Navigation 5.9.2
+
+・Prop Types 15.7.2
+
+・date-fns 2.16.1
+
+・lodash 4.17.20
+
+・Expo 40.0.0
+
+・Android Studio 4.1.2
+
+・Firebase 8.2.4
+
+・Figma(デザインカンプ)
+
+機能一覧
+===
+
+・ユーザー登録/ログイン認証機能(FirebaseのAuthenticationを利用)
+
+・トレーニングメニュー管理機能(CRUD/SDKを活用した非同期処理/useStateを利用したデータ保持/useEffectを利用したデータ表示/FirebaseのFirestoreをデータベースに利用)
+
+・計算機能(useStateを利用した数字や状態の管理)
