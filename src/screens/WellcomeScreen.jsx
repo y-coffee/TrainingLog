@@ -69,14 +69,14 @@ export default function WellcomScreen(props) {
 
       <View style={styles.container}>
         <View style={styles.stepTitleBox}>
-          <Text style={styles.stepTitle}>STEP4 メニューの編集と計算</Text>
+          <Text style={styles.stepTitle}>STEP4 メニュー作りと計算</Text>
         </View>
         <View style={styles.imageBox}>
           <Image source={EditImage} style={styles.image} />
         </View>
         <View style={styles.stepDescriptionBox}>
-          <Text style={styles.stepDescription}>トレーニングメニューの閲覧と編集にペンやノートなどの筆記用具は一切必要ありません。</Text>
-          <Text style={styles.stepDescription}>また、メニュー編集画面には電卓が用意されており、重量などの調節が簡単に行えるようになっています。</Text>
+          <Text style={styles.stepDescription}>トレーニングメニューの作成や閲覧そして編集にペンやノートなどの筆記用具は一切必要ありません。</Text>
+          <Text style={styles.stepDescription}>また、メニュー作成・編集画面には電卓が用意されており、重量などの調節が簡単に行えるようになっています。</Text>
         </View>
       </View>
 

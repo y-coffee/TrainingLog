@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import {
-  View, StyleSheet, TextInput, KeyboardAvoidingView, Alert,
+  View, StyleSheet, TextInput, KeyboardAvoidingView, Alert, ScrollView,
 } from 'react-native';
 import firebase from 'firebase';
 
 import CircleButton from '../components/CircleButton';
 import { translateErrors } from '../utils';
+import Calculator from '../components/Calculator';
 
 export default function MenuCreateScreen(props) {
   const { navigation } = props;
@@ -30,14 +31,19 @@ export default function MenuCreateScreen(props) {
 
   return (
     <KeyboardAvoidingView style={styles.container} behavior="absolute">
+      <View style={styles.bgmBox}>
+        <Calculator />
+      </View>
       <View style={styles.inputContainer}>
-        <TextInput
-          value={bodyText}
-          multiline
-          style={styles.input}
-          onChangeText={(text) => { setBodyText(text); }}
-          autoFocus
-        />
+        <ScrollView>
+          <TextInput
+            value={bodyText}
+            multiline
+            style={styles.input}
+            onChangeText={(text) => { setBodyText(text); }}
+            autoFocus
+          />
+        </ScrollView>
       </View>
       <CircleButton
         name="check"
@@ -52,14 +58,25 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   inputContainer: {
-    paddingVertical: 32,
-    paddingHorizontal: 27,
-    flex: 1,
+    // paddingVertical: 32,
+    // paddingHorizontal: 27,
+    flex: 1.9,
   },
   input: {
     flex: 1,
     textAlignVertical: 'top',
     fontSize: 16,
     lineHeight: 24,
+    paddingTop: 32,
+    paddingBottom: 32,
+    paddingHorizontal: 27,
+  },
+  bgmBox: {
+    flex: 1.1,
+    position: 'relative',
+    marginTop: 0,
+    // backgroundColor: 'blue',
+    backgroundColor: '#202020',
+    // paddingBottom: 20,
   },
 });
