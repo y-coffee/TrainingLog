@@ -53,8 +53,15 @@ Google Playのアプリページはこちらから: [リンク](https://play.goo
 機能一覧
 ===
 
-・ユーザー登録/ログイン認証機能(FirebaseのAuthenticationを利用)
+●ユーザー登録/ログイン認証機能(FirebaseのAuthenticationを利用)
 
-・トレーニングメニュー管理機能(CRUD/SDKを活用した非同期処理/useStateを利用したデータ保持/useEffectを利用したデータ表示/FirebaseのFirestoreをデータベースに利用)
+●トレーニングメニュー管理機能(CRUD/FirebaseのFirestoreをデータベースに利用)
+　○トレーニングメニュー作成機能(useStateを利用した入力情報の保持とFirebaseのFirestoreへ送信)
 
-・計算機能(useStateを利用した数字や状態の管理)
+　○トレーニングメニュー読み取り機能(useEffectを利用したユーザー情報チェックとそれ合わせたデータの読み取り)
+
+　○トレーニングメニュー変更機能(useStateを利用した情報の変更)
+
+　○トレーニングメニュー削除機能(ユーザー情報に該当するデータの削除)
+
+●計算機能(useStateを利用した数字や状態の管理)
