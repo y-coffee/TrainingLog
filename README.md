@@ -28,27 +28,27 @@ Google Playのアプリページはこちらから: [リンク](https://play.goo
 使用技術一覧(言語・ライブラリ・ツール)
 ===
 
-・React Native 4.13.1
+- React Native 4.13.1
 
-・React.js 16.13.1
+- React.js 16.13.1
 
-・React Navigation 5.9.2
+- React Navigation 5.9.2
 
-・Prop Types 15.7.2
+- Prop Types 15.7.2
 
-・date-fns 2.16.1
+- date-fns 2.16.1
 
-・lodash 4.17.20
+- lodash 4.17.20
 
-・Expo 40.0.0
+- Expo 40.0.0
 
-・Android Studio 4.1.2
+- Android Studio 4.1.2
 
-・Firebase 8.2.4
+- Firebase 8.2.4
 
-・ESLint 7.18.0(Airbnb)
+- ESLint 7.18.0(Airbnb)
 
-・Figma(デザインカンプ)
+- Figma(デザインカンプ)
 
 機能一覧
 ===
