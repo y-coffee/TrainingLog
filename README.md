@@ -19,6 +19,9 @@ Android対応のCRUDネイティブアプリです。React Nativeで制作しま
 
 制作中のクライアントサイドでのチェックにはExpo、PC上でのエミュレーターを使ったチェックにはAndroid Studioを役立てました。デザインカンプはFigmaで行っています。
 
+テストユーザー: tlog-tester@example.com
+テストパスワード: tester8888
+
 ■ 使用言語・ツール：React Native/Expo/Android Studio/Firebase/Figma
 
 ■ アプリが掲載されているGoogle Playはこちらからどうぞ：[リンク(外部)](https://play.google.com/store/apps/details?id=jp.AppCreate.TrainingLog)
