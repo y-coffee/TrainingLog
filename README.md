@@ -56,6 +56,7 @@ Google Playのアプリページはこちらから: [リンク](https://play.goo
 ●ユーザー登録/ログイン認証機能(FirebaseのAuthenticationを利用)
 
 ●トレーニングメニュー管理機能(CRUD/FirebaseのFirestoreをデータベースに利用)
+
 　○トレーニングメニュー作成機能(useStateを利用した入力情報の保持とFirebaseのFirestoreへ送信)
 
 　○トレーニングメニュー読み取り機能(useEffectを利用したユーザー情報チェックとそれ合わせたデータの読み取り)
