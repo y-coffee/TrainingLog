@@ -46,6 +46,8 @@ Google Playのアプリページはこちらから: [リンク](https://play.goo
 
 ・Firebase 8.2.4
 
+・ESLint 7.18.0(Airbnb)
+
 ・Figma(デザインカンプ)
 
 機能一覧
